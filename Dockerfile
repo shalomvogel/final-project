@@ -11,4 +11,4 @@ WORKDIR /src/app
 
 COPY StateCap.py .
 
-CMD["python", "StateCap.py"]
+CMD ["python", "StateCap.py"]

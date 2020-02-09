@@ -1,6 +1,6 @@
 node('centos-docker') {
-    
-    
+
+
 stage('check-out-code') {
       checkout([$class: 'GitSCM', branches: [[name: "${branch}"]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-creds', url: 'https://github.com/lidorg-dev/final-project.git']]])
 
@@ -9,12 +9,19 @@ stage('check-out-code') {
 stage('Build') {
    sh label: '', script: "docker build -t sarah-app:${env.BUILD_ID} ."
 }
+
+stage('Test') {
+
+}
+
 stage('Publish') {
    withDockerRegistry(credentialsId: 'docker-hub') {
   sh label: '', script: "docker tag sarah-app:${env.BUILD_ID} lidorlg/sarah-app:${env.BUILD_ID} && docker push lidorlg/sarah-app:${env.BUILD_ID}"
 }
 }
 
-
+stage('Notify Slack') {
+   slackSend channel: '#devopscourse1', message: 'finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
+}
 
 }

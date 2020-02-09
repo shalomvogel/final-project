@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@lidorg-dev 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-SaraBenShabbat
-/
-final-project
-forked from lidorg-dev/final-project
-0
-010
- Code Pull requests 0 Actions Projects 0 Wiki Security Insights
-final-project/StateCap.py / 
-@SaraBenShabbat SaraBenShabbat Fix lambda expression.
-696feeb 18 days ago
-@SaraBenShabbat@lidorg-dev
-135 lines (112 sloc)  3.34 KB
-  
-You're using code navigation to jump to definitions or references.
-Learn more or give us feedback
 """
 We have an existing dictionary that maps US states to their capitals.
 1. Print the state capital of Idaho
@@ -158,15 +130,3 @@ def main():
 if __name__ == '__main__':
     sys.exit(main())
 """
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

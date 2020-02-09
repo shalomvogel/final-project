@@ -21,7 +21,7 @@ stage('Publish') {
 }
 
 stage('Notify Slack') {
-   slackSend channel: '#devopscourse1', message: 'finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
+   slackSend channel: '#devopscourse1', message: "finished ${env.JOB_NAME} ${env.BUILD_NUMBER}"
 }
 
 }

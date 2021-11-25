@@ -11,17 +11,30 @@ Example: ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 """
 import pytest
 
-def no_duplicates(a_string):
-    pass
+from textwrap import wrap
 
+a_string = 'monty pythons flying circus'
+
+def no_duplicates(a_string):
+    result = ''.join(sorted(set(a_string)))
+    return result
+
+# print(no_duplicates(a_string))
 
 def reversed_words(a_string):
-    pass
+    words = a_string.split()
+    words = list(reversed(words))
+    return words
 
+# print(reversed_words(a_string))
+# print(' '.join(reversed_words(a_string)))
 
 def four_char_strings(a_string):
+    short = wrap(a_string, 4)
+    return short
     pass
 
+# print(four_char_strings(a_string))
 
 def test_no_duplicates():
     s = 'monty pythons flying circus'
@@ -45,3 +58,4 @@ def main():
 if __name__ == '__main__':
     main()
     
+
